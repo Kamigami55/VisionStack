@@ -19,14 +19,15 @@ struct VisionStackApp: App {
         }
 
         ImmersiveSpace(id: appModel.immersiveSpaceID) {
-            ImmersiveView()
-                .environment(appModel)
-                .onAppear {
-                    appModel.immersiveSpaceState = .open
-                }
-                .onDisappear {
-                    appModel.immersiveSpaceState = .closed
-                }
+            StackingView()
+//            ImmersiveView()
+//                .environment(appModel)
+//                .onAppear {
+//                    appModel.immersiveSpaceState = .open
+//                }
+//                .onDisappear {
+//                    appModel.immersiveSpaceState = .closed
+//                }
         }
         .immersionStyle(selection: .constant(.mixed), in: .mixed)
      }
