@@ -24,9 +24,11 @@ struct StackingView: View {
             await model.processHandUpdates()
         }.task {
             // process word reconstruction
+            await model.processReconstructionUpdates()
         }.gesture(SpatialTapGesture().targetedToAnyEntity().onEnded({ value in
             Task {
                 // gesture
+                await model.placeCube()
             }
         }))
     }
